@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
+
+// Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// variable
+$primary: #020202;
+$secondary: #525252;
+$gray: #F2F2F2;
+$fw-bolder: 900;
+$fw-bold: 700;
+
+// breakpoint
+@mixin mobile {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  color: $primary;
+  line-height: 24px;
+}
+
+.container {
+  // 1296+24 左右padding
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px 12px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  @include mobile {
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+
+  @include desktop {
+    width: 33.33333%;
+    margin: 0 12px 24px 12px;
+    flex: 1 0 calc(33.333333% - 24px);
+  }
+}
+
+.card {
+  border: 1px solid $gray;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+  
+  &-img {
+    height: 312px;
+    overflow: hidden;
+
+    &>img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all 0.6s;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  &-body {
+    padding: 20px 32px;
+    border-bottom: 1px solid $gray;
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: $fw-bolder;
+    margin-bottom: 12px;
+  }
+
+  &-text {
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary;
+  }
+
+  &-list {
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 32px;
+      border-bottom: 1px solid $gray;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &-title {
+      font-weight: $fw-bold;
+    }
+  }
+}
