@@ -21,14 +21,14 @@ $fw-bolder: 900;
 $fw-bold: 700;
 
 // breakpoint
-@mixin mobile {
-  @media (min-width: 375px) {
+@mixin ipad {
+  @media (min-width: 768px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     @content;
   }
 }
@@ -52,9 +52,13 @@ body {
 }
 
 .col {
-  @include mobile {
-    width: 100%;
-    margin: 0 0 12px 0;
+  width: 100%;
+  margin: 0 0 12px 0;
+
+  @include ipad {
+    width: 50%;
+    margin: 0 12px 24px 12px;
+    flex: 1 0 calc(50% - 24px);
   }
 
   @include desktop {
@@ -69,9 +73,10 @@ body {
   border-radius: 16px;
   overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   
   &-img {
-    height: 312px;
     overflow: hidden;
 
     &>img {
@@ -88,6 +93,7 @@ body {
   }
 
   &-body {
+    flex-grow: 1;
     padding: 20px 32px;
     border-bottom: 1px solid $gray;
   }
@@ -120,5 +126,10 @@ body {
     &-title {
       font-weight: $fw-bold;
     }
+  }
+
+  &-hashtag {
+    text-decoration: none;
+    color: $primary;
   }
 }
