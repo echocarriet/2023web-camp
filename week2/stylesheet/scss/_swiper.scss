@@ -1,0 +1,79 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+  
+  &-slide {
+    height: auto;
+  }
+}
+.swiperFeedback {
+  & .swiper-pagination {
+    position: relative;
+    text-align: center;
+    transition: 0.3s opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+    margin-top: 24px;
+    &-bullet {
+      width: 8px;
+      height: 8px;
+      opacity: 1;
+      background: #525252;
+    }
+    &-bullet-active {
+      width: 12px;
+      height: 12px;
+      background: $white;
+      border-radius: 50px;
+    }
+  }
+}
+.swiperLogo {
+  position: relative;
+  & .gradientBox {
+    &L, &R {
+      position: absolute;
+      display: block;
+      width: 83px;
+      height: 40px;
+      z-index: 990;
+    }
+    &L {      
+      left: 0;      
+      background: linear-gradient(90deg, #1E1E1E 0%, rgba(30, 30, 30, 0.991615) 11.79%, rgba(30, 30, 30, 0.967585) 21.38%, rgba(30, 30, 30, 0.9296) 29.12%, rgba(30, 30, 30, 0.879348) 35.34%, rgba(30, 30, 30, 0.818519) 40.37%, rgba(30, 30, 30, 0.7488) 44.56%, rgba(30, 30, 30, 0.671881) 48.24%, rgba(30, 30, 30, 0.589452) 51.76%, rgba(30, 30, 30, 0.5032) 55.44%, rgba(30, 30, 30, 0.414815) 59.63%, rgba(30, 30, 30, 0.325985) 64.66%, rgba(30, 30, 30, 0.2384) 70.88%, rgba(30, 30, 30, 0.153748) 78.62%, rgba(30, 30, 30, 0.0737185) 88.21%, rgba(30, 30, 30, 0) 100%);
+    }
+    &R {
+      right: 0;      
+      background: linear-gradient(-90deg, #1E1E1E 0%, rgba(30, 30, 30, 0.991615) 11.79%, rgba(30, 30, 30, 0.967585) 21.38%, rgba(30, 30, 30, 0.9296) 29.12%, rgba(30, 30, 30, 0.879348) 35.34%, rgba(30, 30, 30, 0.818519) 40.37%, rgba(30, 30, 30, 0.7488) 44.56%, rgba(30, 30, 30, 0.671881) 48.24%, rgba(30, 30, 30, 0.589452) 51.76%, rgba(30, 30, 30, 0.5032) 55.44%, rgba(30, 30, 30, 0.414815) 59.63%, rgba(30, 30, 30, 0.325985) 64.66%, rgba(30, 30, 30, 0.2384) 70.88%, rgba(30, 30, 30, 0.153748) 78.62%, rgba(30, 30, 30, 0.0737185) 88.21%, rgba(30, 30, 30, 0) 100%);
+    }
+  }
+  & img {
+    width: 160px;
+    height: auto;
+  }
+  @include ipad {
+    & .gradientBox{
+      &L, &R {
+        width: 196px;
+      }
+    }
+    }
+}
+.deco {
+  &Body {
+    width: 100%;
+    height: 117px;
+    overflow: hidden;
+  }
+  width: 117px;
+  height: 117px;
+  transform: translateY(180px);
+  @include desktop {
+    &Body {
+      width: 100%;
+      height: 180px;
+    }
+    width: 180px;
+    height: 180px;
+  }
+}

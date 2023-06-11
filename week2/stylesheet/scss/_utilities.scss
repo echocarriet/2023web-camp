@@ -1,0 +1,345 @@
+.h-100 {
+  height: 100%;
+}
+.text-center {
+  text-align: center;
+}
+// Font Weight
+$font-weight: (
+  'normal': $fw-normal,
+  'bold': $fw-bold,
+  'bolder': $fw-bolder,
+);
+@each $key, $value in $font-weight {
+  .fw-#{$key} {
+    font-weight: $value;
+  }
+}
+
+// Font Size
+$font-size: (
+  '1': 120px,
+  '2': 80px,
+  '3': 48px,
+  '4': 32px,
+  '5': 20px,
+  '6': 16px,
+  '7': 14px,
+);
+@each $key, $value in $font-size {
+  .fs-#{$key} {
+    font-size: $value;
+  }  
+};
+@include desktop {
+  @each $key, $value in $font-size {
+    .fs-lg-#{$key} {
+      font-size: $value;
+    }  
+  };
+}
+
+
+// Line Height
+$lh :(
+  'mini': 21px,
+  'base': 24px,
+  'sm': 38.4px,
+  'ml': 57.6px,
+  'lg': 96px,
+  'xl': 144px,
+);
+@each $key, $value in $lh {
+  .lh-#{$key} {
+    line-height: $value;
+  }  
+};
+@include desktop {
+  @each $key, $value in $lh {
+    .lh-lg-#{$key} {
+      line-height: $value;
+    }  
+  };
+}
+
+// Flex
+.d-flex {
+  display: flex;
+}
+$justify-content : (
+  'start': flex-start,
+  'end': flex-end,
+  'between': space-between,
+  'center': center,
+);
+@each $key, $value in $justify-content {
+  .justify-content-#{$key} {
+    justify-content: $value;
+  }
+}
+@include ipad {
+  @each $key, $value in $justify-content {
+    .justify-content-md-#{$key} {
+      justify-content: $value;
+    }
+  }
+}
+@include desktop {
+  @each $key, $value in $justify-content {
+    .justify-content-lg-#{$key} {
+      justify-content: $value;
+    }
+  }
+}
+$align-items : (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'stretch': stretch,
+);
+@each $key, $value in $align-items {
+  .align-items-#{$key} {
+    align-items: $value;
+  }
+}
+$order :(
+  '1': 1,
+  '2': 2,
+  '3': 3,
+);
+
+@each $key, $value in $order {
+  .order-#{$key} {
+    order: $value;
+  }
+}
+@include ipad {
+  @each $key, $value in $order {
+    .order-md-#{$key} {
+      order: $value;
+    }
+  }
+}
+@include desktop {
+  @each $key, $value in $order {
+    .order-lg-#{$key} {
+      order: $value;
+    }
+  }
+}
+// spacing
+$m : (
+  '0': 0,
+  '1': $spacer * 0.25,
+  '2': $spacer * 0.5,
+  '3': $spacer * 0.75,
+  '4': $spacer * 1,
+  '5': $spacer * 1.25,
+  '6': $spacer * 1.5,
+  '7': $spacer * 2,
+  '8': $spacer * 2.5,
+  '9': $spacer * 3,
+  '10': $spacer * 3.75,
+  '11': $spacer * 5,
+  '12': $spacer * 7.5,
+  '13': $spacer *  10,
+  'auto': auto,
+);
+@each $key, $value in $m {
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+  .ms-#{$key} {
+    margin-left: $value;
+  }
+  .me-#{$key} {
+    margin-right: $value;
+  }
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+@include ipad {
+  @each $key, $value in $m {
+    .mt-md-#{$key} {
+      margin-top: $value;
+    }
+    .mb-md-#{$key} {
+      margin-bottom: $value;
+    }
+    .ms-md-#{$key} {
+      margin-left: $value;
+    }
+    .me-md-#{$key} {
+      margin-right: $value;
+    }
+    .mx-md-#{$key} {
+      margin-left: $value;
+      margin-right: $value;
+    }
+    .my-md-#{$key} {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+  }
+}
+@include desktop {
+  @each $key, $value in $m {
+    .mt-lg-#{$key} {
+      margin-top: $value;
+    }
+    .mb-lg-#{$key} {
+      margin-bottom: $value;
+    }
+    .ms-lg-#{$key} {
+      margin-left: $value;
+    }
+    .me-lg-#{$key} {
+      margin-right: $value;
+    }
+    .mx-lg-#{$key} {
+      margin-left: $value;
+      margin-right: $value;
+    }
+    .my-lg-#{$key} {
+      margin-top: $value;
+      margin-bottom: $value;
+    }
+  }
+}
+
+$p : (
+  '1': $spacer * 0.25,
+  '2': $spacer * 0.5,
+  '3': $spacer * 0.75,
+  '4': $spacer * 1,
+  '5': $spacer * 1.25,
+  '6': $spacer * 1.5,
+  '7': $spacer * 2,
+  '8': $spacer * 2.5,
+  '9': $spacer * 3,
+  '10': $spacer * 3.75,
+  '11': $spacer * 5,
+  '12': $spacer * 7.5,
+  '13': $spacer *  10,
+  'auto': auto,
+);
+@each $key, $value in $p {
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+  .ps-#{$key} {
+    padding-left: $value;
+  }
+  .pe-#{$key} {
+    padding-right: $value;
+  }
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+@include desktop {
+  @each $key, $value in $p {
+    .pt-lg-#{$key} {
+      padding-top: $value;
+    }
+    .pb-lg-#{$key} {
+      padding-bottom: $value;
+    }
+    .ps-lg-#{$key} {
+      padding-left: $value;
+    }
+    .pe-lg-#{$key} {
+      padding-right: $value;
+    }
+    .px-lg-#{$key} {
+      padding-left: $value;
+      padding-right: $value;
+    }
+    .py-lg-#{$key} {
+      padding-top: $value;
+      padding-bottom: $value;
+    }
+  }
+}
+
+// Display: block | none
+$display: (
+  'block': block,
+  'none': none,
+);
+@each $key, $value in $display {
+  .display-#{$key} {
+    display: $value;
+  }
+}
+@include ipad {
+  @each $key, $value in $display {
+    .display-md-#{$key} {
+      display: $value;
+    }
+  }
+}
+@include desktop {
+  @each $key, $value in $display {
+    .display-lg-#{$key} {
+      display: $value;
+    }
+  }
+}
+
+// Grid
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: (-($gutter-width / 2));
+  margin-right: (-($gutter-width / 2));
+}
+@for $i from 1 through $grid-num {
+  .col-#{$i} {
+    position: relative;
+    min-height: 1px;
+    max-width: 100% * ($i / $grid-num);
+    flex: 0 0 (100% * ($i / $grid-num));
+    padding: 0 ($gutter-width / 2);
+  }
+}
+@include ipad {
+  @for $i from 1 through $grid-num {
+    .col-md-#{$i} {
+      position: relative;
+      min-height: 1px;
+      padding: 0 ($gutter-width / 2);
+      max-width: 100% * ($i / $grid-num);
+      flex: 0 0 (100% * ($i / $grid-num));
+    }
+  }
+}
+@include desktop {
+  @for $i from 1 through $grid-num {
+    .col-lg-#{$i} {
+      position: relative;
+      min-height: 1px;
+      padding: 0 ($gutter-width / 2);
+      max-width: 100% * ($i / $grid-num);
+      flex: 0 0 (100% * ($i / $grid-num));
+    }
+  }
+}
+
